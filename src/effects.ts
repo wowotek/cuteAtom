@@ -8,8 +8,8 @@ class Explosion {
 
     public draw(p5: P5) {
         p5.strokeWeight(2);
-        p5.stroke("white")
-        for(let i=0; i< 52; i++) {
+        p5.stroke(255, 5)
+        for(let i=0; i< 180; i++) {
             let angle = i * (360 / 52);
             p5.angleMode(p5.DEGREES);
             p5.line(this.x, this.y, this.x + Math.cos(angle) * 130, this.y + Math.sin(angle) * 130)
@@ -29,7 +29,7 @@ class Explosion {
     }
 }
 
-export function explode(x: number, y: number, lifetime: number = 1) {
+export function explode(x: number, y: number, lifetime: number = 0.001) {
     Explosions.push(new Explosion(x, y, lifetime));
 }
 
